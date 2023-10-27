@@ -8,7 +8,7 @@
     reducer:{
       cake: cakeReducer,
       icecream: icecreamReducer,
-      users : userReducer
+      user : userReducer
     },
     // middleware: (getDefaultMiddleware)=>getDefaultMiddleware().concat(logger)
   })

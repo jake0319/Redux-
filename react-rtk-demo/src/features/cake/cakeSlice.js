@@ -9,7 +9,7 @@ const cakeSlice = createSlice({
   name: 'cake', //key
   initialState, //initState
   reducers: {
-    ordered:(state,action)=>{ //immer자동적용
+    ordered:(state)=>{ //immer자동적용
       state.numOfCakes-- //state객체를 직접 조작하는 것처럼 작성 
     },
     restocked:(state,action)=>{

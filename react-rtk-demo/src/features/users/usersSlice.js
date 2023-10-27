@@ -7,15 +7,14 @@ const initialState = {
   error: ''
 }
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers',()=>{
-  axios.get('https://jsonplaceholder.typicode.com/users')
-  .then((res)=>{
-    return res.data.map((userData)=>userData.id)
-  })
+export const fetchUsers = createAsyncThunk('user/fetchUsers',()=>{
+  return axios.get('https://jsonplaceholder.typicode.com/users')
+  .then((res)=>res.data
+  )
 }) // CAT함수는 프로미스라이프 사이클에서 발생하는 각 액션을 자동으로 디스패치해준다.
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: 'user',
   initialState,
   extraReducers: (builder)=>{
     builder.addCase(fetchUsers.pending,(state)=>{
