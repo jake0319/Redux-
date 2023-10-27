@@ -9,7 +9,7 @@ const cakeSlice = createSlice({
   name: 'cake', //key
   initialState, //initState
   reducers: {
-    ordered:(state)=>{ //immer자동적용
+    ordered:(state,action)=>{ //immer자동적용
       state.numOfCakes-- //state객체를 직접 조작하는 것처럼 작성 
     },
     restocked:(state,action)=>{
@@ -24,4 +24,4 @@ const cakeSlice = createSlice({
 //   cakeActions: cakeSlice.actions
 // }
 export default cakeSlice.reducer
-export const cakeActions = cakeSlice.actions
+export const {ordered , restocked} = cakeSlice.actions
